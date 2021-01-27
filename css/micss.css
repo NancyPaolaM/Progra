@@ -1,0 +1,13 @@
+html {
+    background: black;
+    color: white;
+}
+
+.html {
+    background: #ffffff;
+    color: #000000; 
+}
+#html {
+    background: rgba(255, 0, 0, .5);
+    color: rgb(255, 255, 255);
+}

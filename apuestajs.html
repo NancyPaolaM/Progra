@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de apuesta</title>
+    <link rel="stylesheet" href="css/bootstrap copy.css">
+</head>
+<body>
+    <h1 class="text-center border border-info ">¡Bienvenido a la casa de apuestas!</h1> <br>
+    <h6 class="text-center">El fondo inicial para apostar son $100 <br>
+        La casa comienza con $100 </h6> <br>
+    <div class="jumbotron container">
+        <label for="">¿Cuanto dinero deseas apostar?</label>
+        <input type="text" name="apuesta" id="apuesta" placeholder="Escribe tu apuesta" class="form-control">
+        <label for="">¿A que numero del dado quieres apostar?</label>
+        <input type="text" name="numero" id="numero" placeholder="Elige un numero de entre 1 y 6" class="form-control"> 
+        <button onclick="apuesta()" type="button" class="btn btn-outline-info mt-3" name="apostar" id="apostar" >Apostar</button>
+    </div>
+
+    <script>
+        var cliente = 100;
+        var casa =100;
+        
+        function apuesta(){
+            var dadorandom =  Math.round (Math.random ()* (6 - 1) + 1);
+            var apuesta = parseInt(document.getElementById("apuesta").value);
+            var dado = document.getElementById("numero").value;
+
+            if (dado == dadorandom){
+                cliente += apuesta;
+                casa -= apuesta;
+                alert("¡FELICIDADES! \n El numero que apostaste fue: " + dado + "\n El numero del dado fue: " + dadorandom + "\n Tu total es de: "+ cliente + "\n La casa cuenta con: " + casa);
+            } else {
+                cliente -= apuesta;
+                casa += apuesta;
+                alert("¡OH NO, PERDISTE\n El numero que apostaste fue: " + dado + "\n El numero del dado fue: " + dadorandom + "\n Tu total es de: "+ cliente + "\n La casa cuenta con: " + casa);
+            }
+            if (cliente == 0){
+                if (confirm ("No cuentas con fondos suficientes para seguir apostando \n ¿Volver a jugar?")){
+                    window.location.replace("apuestajs.html")    
+                } else {
+                    alert ("Gracias por participar")
+                }
+            }
+            if (casa == 0){
+                if (confirm ("La casa no cuenta con fondos suficientes para seguir apostando \n ¿Volver a jugar?")){
+                    window.location.replace("apuestajs.html")    
+                } else {
+                    alert ("Gracias por participar")
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

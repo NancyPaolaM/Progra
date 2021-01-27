@@ -1,0 +1,12 @@
+
+.correofunt{
+    text-decoration: none;
+    color: rgb(219, 6, 6);
+}
+
+.correofunt :hover{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+
+}
