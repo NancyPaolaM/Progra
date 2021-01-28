@@ -1,10 +1,10 @@
 <?php
     if(!isset($_SESSION))
     session_start();
-    require_once("./conecta.php");
-    $email=$_POST['email'];
+    require_once("conecta.php");
+    $correo=$_POST['correo'];
     $password=$_POST['pass'];
-    $query=mysqli_query($conec, "SELECT * FROM usuario WHERE email='$email' AND pass='$password'");
+    $query=mysqli_query($conec, "SELECT * FROM usuario WHERE correo='$correo' AND pass='$password'");
     $renglon=$query->num_rows;
     if($renglon==1){
         while ($fila=mysqli_fetch_array($query)){
