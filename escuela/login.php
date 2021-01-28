@@ -27,35 +27,49 @@
         <?php
         include_once("Layout/navbar.php");
         ?>
-        <div class="container pt-5">
-            <div class="jumbotron">
-                <h1 class="display-4 text-center "> Ingresar</h1> <br>
-                <form action="autentifica.php" method="POST" id="formularioLogin">
-                    <div class="row mb-3">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre de usuario</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="nombre">
+        <br><br><br>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Inicio de Sesión</h5>
+                            <form action="autentifica.php" method="POST" id="formularioLogin">
+                                <!-- <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre de usuario</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="nombre">
+                                    </div>
+                                </div> -->
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Correo Electrónico</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" name="pass">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" class="btn btn-primary" id="login" value="accede">Iniciar</button>
+                                    <button type="button" class="btn btn-secudary stretched-link" href="index.php#">Registrar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Correo electrónico</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" name="email">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" name="pass">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" id="login" value="accede">Iniciar</button>
-                    <button type="button" class="btn btn-success stretched-link" href="index.php#">Registrar</button>
-
-                </form>
+                </div>
             </div>
         </div>
+        <br><br><br>
+        <!-- <div class="container pt-5">
+            <div class="jumbotron">
+                <h1 class="display-4 text-center "> Ingresar</h1> <br>
+                
+            </div>
+        </div> -->
         <script>
             $('#login').on('click', function() {
 
@@ -97,8 +111,7 @@
                 });
             });
         </script>
-
-        <div class="container-fluid bg-primary text-white"><br>
+        <!-- <div class="container-fluid bg-primary text-white"><br>
             <div class="row mt-2">
                 <div class="col-6">
                     <h4>DIRECCIÓN</h4>
@@ -114,7 +127,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
         <script src="js/jquery-3.1.1.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="../js/datatables.min.js"></script>
