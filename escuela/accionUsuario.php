@@ -45,7 +45,7 @@ function leerTodo()
     while ($fila = mysqli_fetch_array($resultado)) {
         echo "<tr><tr>" .
 
-            $fila["userID"] . "</td><tr>" . $fila["nombre"] . "</td><tr>" . $fila["apellido"] . "</td><tr>" . $fila["email"] . "</td><tr>" . $fila["password"] . "<br>";
+        $fila["userID"] . "</td><tr>" . $fila["nombre"] . "</td><tr>" . $fila["apellido"] . "</td><tr>" . $fila["email"] . "</td><tr>" . $fila["password"] . "<br>";
     }
 
 function leer()
@@ -57,8 +57,9 @@ function leer()
         echo "<tr><td>" .
             $fila["idUser"] . "</td><td>" . $fila["nombre"] . "</td><tr>";
     }
+}
 
-{
+function actualizar() {
     require_once("../conecta.php");
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -76,10 +77,10 @@ function borrar()
     require_once("../conecta.php");
 
 
-    if (mysqli_query($conec, "delete from usuario where idUser=" . $_POST["idUser"])) {
+    if (mysqli_query($conec, "delete from usuario where idUser=" . $_POST["idUser"]))
         echo "se borro";
-    } else {
+    else 
         echo "no se borro";
-    }
 }
 }
+?>
