@@ -1,3 +1,2 @@
 <?php
-   $conec = mysqli_connect('localhost', 'root', '', 'escuela');
-?>
+$conec = mysqli_connect('localhost', 'root', '', 'escuela');

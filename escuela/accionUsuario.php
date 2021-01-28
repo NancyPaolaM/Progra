@@ -2,7 +2,7 @@
 //require_once("seguridad.php");
 if (!isset($_POST["accion"]))
     die("murio");
-$accion =$_POST["accion"];
+$accion = $_POST["accion"];
 switch ($accion) {
     case "create":
         agrega();
@@ -20,7 +20,7 @@ switch ($accion) {
         borrar();
         break;
     default:
-    echo "opcion no existente";
+        echo "opcion no existente";
 }
 function agrega()
 {
@@ -28,23 +28,24 @@ function agrega()
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    $password = $_POST['password'];
     $idTer = $_POST['idTer'];
 
-    if (mysqli_query($conec, "insert into usuario(nombre, apellido, email, pass, idTer) values ('$nombre', '$apellido', '$email', '$pass', $idTer)"))
+    if (mysqli_query($conec, "insert into usuario(nombre, apellido, email, password, idTer) values ('$nombre', '$apellido', '$email', '$password', $idTer)"))
         header("location:usuario.php?mensaje=ok");
     else
-    header("location:usuario.php?mensaje=error");
+        header("location:usuario.php?mensaje=error");
 }
 
-function leerTodo(){
+function leerTodo()
+{
     require_once("../conecta.php");
     $resultado = mysqli_query($conec, "select * from usuario");
-     echo "<table>";
+    echo "<table>";
     while ($fila = mysqli_fetch_array($resultado)) {
         echo "<tr><tr>" .
 
-            $fila["idUser"]."</td><tr>".$fila["nombre"]."</td><tr>".$fila["apellido"]."</td><tr>".$fila["email"]."</td><tr>".$fila["pass"]."<br>";
+            $fila["userID"] . "</td><tr>" . $fila["nombre"] . "</td><tr>" . $fila["apellido"] . "</td><tr>" . $fila["email"] . "</td><tr>" . $fila["password"] . "<br>";
     }
     echo "</table>";
 }
@@ -53,10 +54,10 @@ function leer()
 {
     require_once("../conecta.php");
     $resultado = mysqli_query($conec, "select * from usuario where idUser=" . $_POST["idUser"]);
-        echo "<table>";
+    echo "<table>";
     while ($fila = mysqli_fetch_array($resultado)) {
         echo "<tr><td>" .
-    $fila["idUser"] . "</td><td>" . $fila["nombre"] . "</td><tr>";
+            $fila["idUser"] . "</td><td>" . $fila["nombre"] . "</td><tr>";
     }
     echo "</table>";
 }
@@ -67,22 +68,22 @@ function actualizar()
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    $password = $_POST['password'];
     $idTer = $_POST['idTer'];
-    if(mysqli_query($conec, "update usuario set nombre='$nombre', apellido='$apellido', email='$email', pass='$pass', idTer=$idTer where idUser=" .$_POST["idUser"]))
-    echo"ok";
+    if (mysqli_query($conec, "update usuario set nombre='$nombre', apellido='$apellido', email='$email', password='$password', idTer=$idTer where idUser=" . $_POST["idUser"]))
+        echo "ok";
     else
-    echo "error";
+        echo "error";
 }
 
 function borrar()
 {
     require_once("../conecta.php");
-   
-    
-    if(mysqli_query($conec, "delete from usuario where idUser=".$_POST["idUser"])){
-    echo"se borro";
-} else{
-    echo "no se borro";
-}}
-?>
+
+
+    if (mysqli_query($conec, "delete from usuario where idUser=" . $_POST["idUser"])) {
+        echo "se borro";
+    } else {
+        echo "no se borro";
+    }
+}

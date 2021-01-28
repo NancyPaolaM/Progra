@@ -8,7 +8,7 @@
 </head>
 <body class="container">
     <form action="autentifica.php" method="POST" id="formularioLogin">
-        usuario:
+    usuario:
     <input type="text" name="email" id="" class="form-control">
     Contraseña:
     <input type="text" name="password" id="" class="form-control">
