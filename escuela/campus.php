@@ -38,7 +38,6 @@
       </div>
     </div>
   </div>
-
   <div class="container text-center "> <br>
     <div class="card mt4">
       <div class="card-body">
@@ -54,7 +53,6 @@
       </div>
     </div>
   </div>
-
   <div class="container text-center "> <br>
     <div class="card mt4">
       <div class="card-body">
@@ -70,7 +68,6 @@
       </div>
     </div>
   </div>
-
   <div class="container text-center "> <br>
     <div class="card mt4">
       <div class="card-body">
@@ -86,7 +83,6 @@
       </div>
     </div>
   </div>
-
   <div class="container text-center "> <br>
     <div class="card mt4">
       <div class="card-body">
@@ -121,7 +117,6 @@
           <li><a href="escuela@gmail.com" class="correofunt text-white">escuela@gmail.com</a></li>
           <li><a href="4611234567" class="tel text-white">4611234567</a></li>
           <li><a href="escuela@gmail.com" class="correofunt text-white">correo1@dominio.ext</a></li>
-
         </ul>
       </div>
     </div>
