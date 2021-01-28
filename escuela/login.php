@@ -27,35 +27,33 @@
         <?php
         include_once("Layout/navbar.php");
         ?>
-        <br><br><br>
+        <br><br>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center">Inicio de Sesión</h5>
-                            <form action="autentifica.php" method="POST" id="formularioLogin">
+                            <form action="autentifica.php" method="post" id="formularioLogin">
                                 <!-- <div class="row mb-3">
                                     <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre de usuario</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="nombre">
                                     </div>
                                 </div> -->
-                                <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Correo Electrónico</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" name="email">
+                                <div class="col-sm-12">
+                                    <div class="row mb-3">
+                                        <label for="email" class="col-sm-4 col-form-label">Correo Electrónico</label>
+                                        <input type="email" class="col-sm-8 form-control" name="email" id="email">
                                     </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" name="pass">
+                                    <div class="row mb-3">
+                                        <label for="pass" class="col-sm-4 col-form-label">Contraseña</label>
+                                        <input type="password" class="col-sm-8 form-control" name="pass" id="pass">
                                     </div>
-                                </div>
-                                <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-primary" id="login" value="accede">Iniciar</button>
-                                    <button type="button" class="btn btn-secudary stretched-link" href="index.php#">Registrar</button>
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-success" id="login" value="accede">Iniciar</button>
+                                        <button type="submit" class="btn btn-primary stretched-link" href="index.php#">Registrar</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -63,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <br><br><br>
+        <br><br>
         <!-- <div class="container pt-5">
             <div class="jumbotron">
                 <h1 class="display-4 text-center "> Ingresar</h1> <br>
@@ -72,7 +70,6 @@
         </div> -->
         <script>
             $('#login').on('click', function() {
-
                 $('#formularioLogin').validate({
                     rules: {
                         email: {
