@@ -22,8 +22,7 @@ switch ($accion) {
     default:
         echo "opcion no existente";
 }
-function agrega()
-{
+function agrega() {
     require_once("../conecta.php");
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -37,19 +36,17 @@ function agrega()
         header("location:usuario.php?mensaje=error");
 }
 
-function leerTodo()
-{
+function leerTodo() {
     require_once("../conecta.php");
     $resultado = mysqli_query($conec, "select * from usuario");
     echo "<table>";
     while ($fila = mysqli_fetch_array($resultado)) {
         echo "<tr><tr>" .
-
         $fila["userID"] . "</td><tr>" . $fila["nombre"] . "</td><tr>" . $fila["apellido"] . "</td><tr>" . $fila["email"] . "</td><tr>" . $fila["password"] . "<br>";
     }
+}
 
-function leer()
-{
+function leer() {
     require_once("../conecta.php");
     $resultado = mysqli_query($conec, "select * from usuario where idUser=" . $_POST["idUser"]);
     echo "<table>";
@@ -72,15 +69,11 @@ function actualizar() {
         echo "error";
 }
 
-function borrar()
-{
+function borrar() {
     require_once("../conecta.php");
-
-
     if (mysqli_query($conec, "delete from usuario where idUser=" . $_POST["idUser"]))
         echo "se borro";
     else 
         echo "no se borro";
-}
 }
 ?>
